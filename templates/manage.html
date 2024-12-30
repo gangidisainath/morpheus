@@ -1,0 +1,25 @@
+{% load static %}
+<head>
+<link rel="stylesheet" href="{% static 'css/base.css' %}">
+</head>
+<p> Select a form name from dropdown to edit it's structure</p>
+   
+
+<form method="post" action="{% url 'editform' %}">
+    {% csrf_token %}
+    <div class="manage">
+        <label for="formtemplate" ></label>
+    <select name="form_name">
+        <li>
+            {% for i in form %}
+            
+                <option  value="{{i.id}}">{{i.name}}</option>
+            {% endfor %}
+        </li>
+    
+    </select>
+    <br>
+    <br>
+    <button type="submit">edit form</button>
+</div>
+</form>

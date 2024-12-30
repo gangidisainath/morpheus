@@ -1,0 +1,77 @@
+h1,h3,p {
+    
+    text-transform: capitalize;
+    text-align: center;
+}
+body{
+    margin-top: 50px;
+}
+.userform label{
+    
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    width:25%;
+    text-transform: capitalize;
+    
+  
+}
+.delete label{
+    display: block;
+    text-align: center;
+    font-size: 125%;
+    text-transform: capitalize;
+
+}
+.manage select{
+    display: block;
+    margin: auto;
+    font-size: 15px;
+}
+.userform{
+    text-align: center;
+}
+table{
+    border-collapse: collapse;
+}
+.response th,.response td{
+    border:3px solid ;
+    border-color: #007bff;
+    text-transform: capitalize;
+  
+}
+
+
+.home a {
+    
+    text-decoration: none;
+    width:fit-content;
+}
+.home a ,button{
+    background-color:#007bff;
+    color: white;
+    font-size: 15px;
+    display: block;
+    margin:auto;
+    
+    text-transform: capitalize;
+    border-radius: 5px;
+    padding: 5px 5px;
+    
+    
+}
+.home p{
+    text-align: center;
+    text-transform: capitalize;
+}
+.home ol{
+    display: flex;
+    column-gap: 10%;
+   
+
+}
+.home li p{
+    display: block;
+
+
+}

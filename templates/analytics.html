@@ -1,0 +1,39 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+        <link rel="stylesheet" href="{% static 'css/base.css' %}">
+        
+        </head>
+<body>
+    <div class="response">
+        <h1>Analytics for form: {{ form.name }}</h1>
+        <p>Total Responses: {{ total_responses }}</p>
+        <table>
+            
+       
+          
+            {% for qa,j in x %}
+            <tr>
+                        <td><b>{{ qa.question }}</b></td>
+                    <td style="padding-left: 10px;">
+                        {% for key, value in qa.analytics.items %}
+                        
+                        {{ key }}: {{ value }}<br>
+                        {% endfor %}
+                    </td>
+                    <td><img src="data:image/png;base64,{{j}}" alt="'chart">
+                    </td>
+                </tr>
+                {% endfor %}
+        
+        </table>
+        
+        
+
+</body>
+</html>

@@ -1,0 +1,33 @@
+{% load static %}
+<head>
+<link rel="stylesheet" href="{% static 'css/base.css' %}">
+<style>
+    a{
+        text-decoration: none;
+    }
+</style>
+</head>
+{% block head %}
+<h1>Create Form</h1>
+{% endblock %}
+
+<form method="post" >
+    {% csrf_token %}
+{% block create %}
+<fieldset style="width:10px; margin: auto;">
+   <b> {{ form.as_p }}</b>
+</fieldset>
+{% endblock %}
+    <h1>Questions</h1>
+    {{ question_formset.management_form }}
+    {% for question_form in question_formset %}
+       <fieldset style="width:10px; margin: auto;">
+        <p style="text-align: left;">Q.{{forloop.counter}}</p>
+        {{ question_form.as_p }}
+            <br>
+        </fieldset>
+    {% endfor %}
+        <br>
+    <button type="submit">Save Form</button>
+   
+</form>

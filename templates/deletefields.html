@@ -1,0 +1,21 @@
+
+{% load static %}
+<head>
+<link rel="stylesheet" href="{% static 'css/base.css' %}">
+</head>
+<h1>Removing fileds of form : {{name}}</h1>
+<div class="delete">
+<form method="POST">
+    {% csrf_token %}
+   {% for i in form %}
+   
+   <label>
+        <input type="checkbox" name="fields" value="{{ i }}">
+        {{i}}</label><br>
+    
+    
+    {% endfor %}
+</select>
+    <button type="submit">Delete Fields</button>
+</form>
+</div>

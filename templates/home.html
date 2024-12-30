@@ -1,0 +1,28 @@
+{% load static %}
+<head>
+<link rel="stylesheet" href="{% static 'css/base.css' %}">
+
+</head>
+<div class="home">
+<h1>HOME</h1>
+<p>  admin can create or manage form structure Here</p>
+<a href="{% url 'user' %}">admin options</a>
+
+<h1>Forms</h1>
+<ol>
+    {% for i,j in forms %}
+        <li><p>
+            form name:<b>{{ i.name }} </b><br><br>
+            
+            total responses={{j}}<br><br>
+            <a href="{% url 'view_form' i.id %}">add response</a> <br>
+            
+            
+            <a href="{% url 'viewresponse' i.id %}">view response</a><br>
+            <a href="{% url 'view_analytics' i.id %}">view_anayltics </a> <br>
+            
+        </p>
+        </li>
+    {% endfor %}
+</ol>
+</div>

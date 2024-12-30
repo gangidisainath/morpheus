@@ -1,0 +1,42 @@
+{% load static %}
+<head>
+<link rel="stylesheet" href="{% static 'css/base.css' %}">
+
+</head>
+<h1>{{ form.name }}</h1>
+<p>{{ form.description }}</p>
+<form method="post">
+    {% csrf_token %}
+    {% for question in questions %}
+        <div class="userform">
+            <label>{{ question.label }}</label>
+            {% if question.question_type == 'text' %}
+                <input type="text" name="question_{{ question.id }}">
+            {% elif question.question_type == 'number' %}
+                <input type="number" name="question_{{ question.id }}">
+               
+            {% elif question.question_type == 'email' %}
+                <input type="email" name="question_{{ question.id }}">
+            {% elif question.question_type == 'textarea' %}
+                <textarea name="question_{{ question.id }}"></textarea>
+            
+            {% elif question.question_type == 'dropdown' %}
+                <select name="question_{{ question.id }}">
+                    <option value="{{ others }}" >others </option>
+                    {% for option in question.options %}
+                        <option value="{{ option }}" >{{ option }}</option>
+                    {% endfor %}
+                </select>
+            {% elif question.question_type == 'checkbox' %}
+                {% for option in question.options %}
+                    <label style="display:inline;">
+                        <input type="checkbox" name="question_{{ question.id }}" value="{{ option }}">
+                        {{ option }}
+                    </label>
+                {% endfor %}
+            {% endif %}
+        
+    {% endfor %}
+<br><br>
+    <button type="submit">Submit</button></div>
+</form>

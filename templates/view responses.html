@@ -1,0 +1,35 @@
+
+{% load static %}
+<head>
+<link rel="stylesheet" href="{% static 'css/base.css' %}">
+</head>
+
+<div class="response">
+<table>
+    <thead>
+        <tr><th>S.No</th>
+        {% for k in questions %}
+        
+        <th>
+            {{k }}
+        
+        </th>
+        {% endfor %}
+    </tr>
+        
+    </thead>
+    <tbody>
+    {% for i in responses %}
+     <tr>
+       <td>{{forloop.counter}}</td> 
+        {% for k,v in i.items %}
+        
+         <td>{{ v }}</td>
+         
+        {% endfor %}
+     </tr>
+
+    {% endfor %}
+</tbody>
+</table>
+</div>

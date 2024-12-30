@@ -1,0 +1,20 @@
+{% load static %}
+<head>
+<link rel="stylesheet" href="{% static 'css/base.css' %}">
+<style>
+    a{
+        text-decoration: none;
+    }
+</style>
+</head>
+   {% block content %}
+   <div class="home" style="margin-top: 70px;">
+ <h1> Welcome Admin</h1>
+   <p>To create new form:<br><br>
+    <a href="{% url 'create' %}">Create New Form</a>
+    <br>
+    To edit existing form:<br>
+    <br><a href="{% url 'manage' %}">manage forms</a>
+</p> 
+    {% endblock %}
+</div>

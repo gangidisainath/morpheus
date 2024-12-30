@@ -1,0 +1,7 @@
+{% extends 'user.html' %}
+{% block content %}
+<div class="home" style="margin-top: 70px;">
+ <h3>To add field:</h3>
+<a href="{% url 'addfield' form_id %}">add new field</a><br><br>
+<h3>To Remove field:</h3><a href="{% url 'deletefields' form_id %}">remove field</a>
+{% endblock %}
